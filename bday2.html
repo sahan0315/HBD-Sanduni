@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 20th Birthday Love 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .image-section {
+      margin-top: 1rem;
+      animation: floatIn 2s ease-in-out;
+      position: relative;
+    }
+    .image-section img {
+      max-width: 250px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    @keyframes floatIn {
+      0% { transform: translateY(100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .twenty-sign {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      font-size: 2.5rem;
+      background: #fff;
+      color: #e75480;
+      padding: 0.3rem 1rem;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-weight: bold;
+      animation: pulseButton 2s infinite;
+    }
+    @keyframes popIn {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+    .button-section {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      padding: 1.5rem 3rem;
+      font-size: 1.5rem;
+      background-color: #e75480;
+      border: none;
+      color: white;
+      border-radius: 2.5rem;
+      cursor: pointer;
+      animation: pulseButton 2s infinite;
+      transition: background-color 0.3s ease, transform 0.3s;
+    }
+    button:hover {
+      background-color: #ff699a;
+      transform: scale(1.1);
+    }
+    @keyframes pulseButton {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .card {
+      display: none;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      text-align: center;
+      margin: 2rem auto;
+      position: relative;
+      animation: heartRain 1s ease-in-out;
+      z-index: 999;
+    }
+    h1 {
+      color: #e75480;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .heart {
+      font-size: 2rem;
+      color: #e75480;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background-image: url("colorful-confetti-background-with-text-space.png");
+      background-size: cover;
+      opacity: 0.9;
+      animation: fadeConfetti 4s ease-in-out infinite;
+    }
+    @keyframes fadeConfetti {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.5; }
+    }
+    .hearts-overlay {
+      display: overlay;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 100000;
+    }
+    .heart-float {
+      position: absolute;
+      font-size: 2rem;
+      color: #ff69b4;
+      animation: fall 60s ease-in infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-50px); opacity: 0; }
+      50% { opacity: 0.7; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" loop>
+    <source src="happy-birthday-to-you-piano-version-13976.mp3">
+  </audio>
+
+  <div class="confetti"></div>
+  <div class="hearts-overlay" id="hearts"></div>
+
+  <div class="image-section">
+    <div class="twenty-sign">20</div>
+    <img src="WhatsApp Image 2025-06-19 at 11.22.36.jpeg" alt="Her Birthday Pic" />
+  </div>
+
+  <div class="button-section">
+    <button onclick="showCard()">See My Wish 💌</button>
+  </div>
+
+  <div class="card">
+    <h1>Happy 20th Birthday <br>My Love 🎂</br></h1>
+    <p>
+On this special day, I just want to say how lucky<br> I am to have you in my life, සුදු මැණික...🤗<br>
+      You light up every moment of my life<br> with your cute smile, pure love<br> and sweet compassion.🥺<br>
+      <br>
+      <b>Here’s to more memories, more laughter and<br> a beautiful life together with you, my queen who holds my heart forever!</b>
+    </p>
+    <div class="heart">💖</div>
+    <div class="footer">
+      With all my love,<br>Sahan 💌
+    </div>
+  </div>
+
+  <script>
+    function showCard() {
+      const card = document.querySelector('.card');
+      card.style.display = 'block';
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      const hearts = document.getElementById('hearts');
+      hearts.style.display = 'block';
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-float');
+        heart.innerHTML = '💗';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+        hearts.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000000);
+      }
+
+      const audio = document.getElementById('bg-music');
+      audio.play().catch(error => console.log('Audio playback error:', error));
+    }
+  </script>
+</body>
+</html>
